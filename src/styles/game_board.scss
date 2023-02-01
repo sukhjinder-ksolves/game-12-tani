@@ -1,0 +1,61 @@
+.game-board {
+    position: relative;
+    width: rem-calc($board-size);
+    height: rem-calc($board-size);
+    overflow: hidden;
+    margin: auto;
+    background: linear-gradient(225deg, #1b1b1b, #212121);
+    box-shadow: -35px 35px 70px #111111, 35px -35px 70px #2d2d2d;
+
+    &:after,
+    &:before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background: $board-border-color;
+        background: $board-border-color;
+        top: 0;
+        left: calc(50% - 1px);
+        box-shadow: rem-calc(-($board-size/4)) 0px $board-border-color, 
+                    rem-calc($board-size/4) 0px $board-border-color;
+    }
+
+    &:before {
+        transform: rotate(90deg);
+    }
+
+    &-outer {
+        width: rem-calc($board-size);
+        height: rem-calc($board-size);
+        margin: auto;
+        border: 2px solid $board-border-color;
+        position: relative;
+        overflow: hidden;
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+        }
+
+        &:before {
+            width: rem-calc(sqrt(($board-size * $board-size) + ($board-size * $board-size) - 4));
+            background: $board-border-color;
+            top: 0;
+            right: 0;
+            transform-origin: right;
+            transform: rotate(-45deg);
+            box-shadow: 0px -#{rem-calc(sqrt((($board-size/4)*($board-size/4)) * 2))} $board-border-color, 0px rem-calc(sqrt((($board-size/4)*($board-size/4)) * 2)) $board-border-color;
+        }
+
+        &-2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate(90deg);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@import 'fonts-gill/stylesheet.css';
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-rendering: geometricPrecision;
+    font-smooth: always;
+    background-color: $bg-color;
+    font-family: 'Gill Sans';
+
+    @media (max-width: 1024px) {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
